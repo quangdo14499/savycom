@@ -85,6 +85,15 @@ a:link {
     display: none;
 }
 
+.menu_icon img{
+    height: 30px;
+    width: 20px;
+}
+
+.menu_icon:hover {
+    cursor: pointer;
+}
+
 .drop_menu {
     position: absolute;
     top: 0;
