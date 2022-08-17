@@ -14,6 +14,14 @@ export const Navigation = () => {
     setIsOpening(isOpening === false ? true : false)
   }
 
+  function handleShow () {
+    setShow(show === false ? true : false)
+  }
+
+  function handleChange () {
+    setChange(change === false ? true : false)
+  }
+
   return (
    <div id='navbar' className='position-fixed py-2'>
       <div className="container_navbar py-3 px-2 d-flex align-items-center m-auto">
@@ -35,9 +43,9 @@ export const Navigation = () => {
             </div>
             <div className="col-3 d-flex justify-content-around">
               <a href='#apply' className='up_cv col-9 btn_primary'>Ứng tuyển ngay</a>
-              <div className='language border-0 d-block position-relative mt-2' onClick={ function () {setShow(show === false ? true : false)}}>
+              <div className='language border-0 d-block position-relative mt-2' onClick={handleShow}>
                 {change? <img src={vi} alt="" /> : <img src={en} alt=""/>}
-                {show || <button className='eng position-absolute' onClick={ function () { setChange(change === false ? true : false)}}>{change? <img src={en} alt="" /> : <img src={vi} alt=""/>}</button>}
+                {show || <button className='eng position-absolute' onClick={handleChange}>{change? <img src={en} alt="" /> : <img src={vi} alt=""/>}</button>}
               </div>
             </div>
           </div>
@@ -58,9 +66,9 @@ export const Navigation = () => {
                   <a href='#contact' onClick={ handleOpen } className='navbar_option2'>Liên hệ</a>
                   <div className="col-3 d-flex flex-column align-items-center">
                     <a href='#apply' onClick={ handleOpen } className='up_cv2 btn_primary'>Ứng tuyển ngay</a>
-                    <div className='language border-0 d-block position-relative mt-2' onClick={ function () {setShow(show === false ? true : false)}}>
+                    <div className='language border-0 d-block position-relative mt-2' onClick={handleShow}>
                       {change? <img src={vi} alt="" /> : <img src={en} alt=""/>}
-                      {show || <button className='eng position-absolute' onClick={ function () { setChange(change === false ? true : false)}}>{change? <img src={en} alt="" /> : <img src={vi} alt=""/>}</button>}
+                      {show || <button className='eng position-absolute' onClick={handleChange}>{change? <img src={en} alt="" /> : <img src={vi} alt=""/>}</button>}
                     </div>
                   </div>
                 </div>
