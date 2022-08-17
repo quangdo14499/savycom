@@ -46,16 +46,9 @@ export const Position = () => {
           ))}
       </div>
       <div className="listjob_container d-flex flex-wrap">
-          {type === 'Tất cả vị trí' ? jobs.filter(el => el.jname.toLocaleLowerCase().includes(query)).map((el) => {
-            return Job(el);
-          }) : type === 'Khối công nghệ' ? itJobs.filter(el => el.jname.toLocaleLowerCase().includes(query)).map((el) => {
-            return Job(el);
-          }) : type === 'Khối kinh doanh' ? kdJobs.filter(el => el.jname.toLocaleLowerCase().includes(query)).map((el) => {
-            return Job(el);
-          }) : vpJobs.filter(el => el.jname.toLocaleLowerCase().includes(query)).map((el) => {
-            return Job(el);
-          })}
-    </div>
+          {(type === 'Tất cả vị trí' ? jobs : type === 'Khối công nghệ' ? itJobs : type === 'Khối kinh doanh' ? kdJobs : vpJobs).filter(el => el.jname.toLocaleLowerCase().includes(query)).map((el) => {
+            return Job(el);})} 
+      </div>
     </div>
   )
 }
