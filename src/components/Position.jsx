@@ -46,7 +46,7 @@ export const Position = () => {
           ))}
       </div>
       <div className="listjob_container d-flex flex-wrap">
-          {(type === 'Tất cả vị trí' ? jobs : type === 'Khối công nghệ' ? itJobs : type === 'Khối kinh doanh' ? kdJobs : vpJobs).filter(el => el.jname.toLocaleLowerCase().includes(query)).map((el) => {
+          {(type === branches[0] ? jobs : type === branches[1] ? itJobs : type === branches[2] ? kdJobs : vpJobs).filter(el => el.jname.toLocaleLowerCase().includes(query)).map((el) => {
             return Job(el);})} 
       </div>
     </div>
